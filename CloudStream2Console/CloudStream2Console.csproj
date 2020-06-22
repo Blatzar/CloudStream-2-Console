@@ -7,17 +7,21 @@
     <ApplicationIcon>bicon.ico</ApplicationIcon>
     <StartupObject>CloudStream2Console.Program</StartupObject>
 	<PublishToSingleFile>true</PublishToSingleFile>
+	<Version>1.1.0</Version>
+	<RepositoryUrl>https://github.com/LagradOst/CloudStream-2-Console</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DefineConstants />
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
+    <ErrorReport>none</ErrorReport>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Jint" Version="2.11.58" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
 </Project>
