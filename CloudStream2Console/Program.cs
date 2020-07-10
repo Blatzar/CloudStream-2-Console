@@ -1954,7 +1954,7 @@ namespace CloudStream2Console
                         if ((ms.dubExists && isDub) || (ms.subExists && !isDub)) {
                             //  dstring = ms.baseUrl;
                             baseUrls.AddRange(isDub ? ms.dubEpisodesUrls : ms.subEpisodesUrls);
-                            error("BASEURL dada.:::" + baseUrls.Count);
+                            print("BASEURL dada.:::" + baseUrls.Count);
                         }
                     }
                 }
@@ -2592,14 +2592,14 @@ namespace CloudStream2Console
                                         baseData.kissanimefreeData.subExists = true;
                                         baseData.kissanimefreeData.subUrl = slug;
                                         baseData.kissanimefreeData.maxSubbedEpisodes = episodes;
-                                        print("MAXSYBBB::" + episodes);
+                                        print("SUB::" + episodes + "|" + i + "|" + q);
                                         baseData.kissanimefreeData.subReferer = re.url;
                                     }
                                     else {
                                         baseData.kissanimefreeData.dubExists = true;
                                         baseData.kissanimefreeData.dubUrl = slug;
                                         baseData.kissanimefreeData.maxDubbedEpisodes = episodes;
-                                        print("MAXSYdddBBB::" + episodes);
+                                        print("DUB::" + episodes + "|" + i + "|" + q);
                                         baseData.kissanimefreeData.dubReferer = re.url;
                                     }
                                     activeMovie.title.MALData.seasonData[i].seasons[q] = baseData;
@@ -2615,7 +2615,7 @@ namespace CloudStream2Console
             int GetLinkCount(int currentSeason, bool isDub)
             {
                 int count = 0;
-                print("CURRENfSTSfEASON:::" + currentSeason + "|" + isDub + "|" + activeMovie.title.MALData.seasonData.Count);
+                error("CURRENfSTSfEASON:::" + currentSeason + "|" + isDub + "|" + activeMovie.title.MALData.seasonData.Count);
                 try {
                     for (int q = 0; q < activeMovie.title.MALData.seasonData[currentSeason].seasons.Count; q++) {
                         var ms = activeMovie.title.MALData.seasonData[currentSeason].seasons[q].kissanimefreeData;
@@ -2623,7 +2623,7 @@ namespace CloudStream2Console
                         if ((ms.dubExists && isDub) || (ms.subExists && !isDub)) {
                             //  dstring = ms.baseUrl;
                             count += (isDub ? ms.maxDubbedEpisodes : ms.maxSubbedEpisodes);
-                            print("ADDEDCOUNT: " + count);
+                            error("ADDEDCOUNT: " + count);
                         }
                     }
                 }
